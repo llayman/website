@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webpage/home.dart';
+import 'package:webpage/publications.dart';
+import 'package:webpage/research.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
                         tabs: [
                           Tab(text: "Home"),
                           Tab(text: "Research"),
-                          Tab(text: "Teaching"),
+                          Tab(text: "Publications"),
                         ],
                       ),
                     ),
@@ -36,8 +38,8 @@ class MyApp extends StatelessWidget {
                             child: TabBarView(
                           children: [
                             HomePage(),
-                            Icon(Icons.directions_transit),
-                            Icon(Icons.directions_bike),
+                            ResearchPage(),
+                            PublicationsPage(),
                           ],
                         )),
                         Text(

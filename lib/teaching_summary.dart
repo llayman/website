@@ -1,6 +1,4 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import 'widgets.dart';
 
@@ -44,13 +42,8 @@ class CourseRef extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var number = url != null
-        ? TextSpan(
-            text: courseNum,
-            style: const TextStyle(color: Colors.blue),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => launchUrlString(url!))
-        : TextSpan(text: courseNum);
+    var number =
+        url != null ? Link(url!, text: courseNum) : TextSpan(text: courseNum);
 
     return RichText(
       text: TextSpan(

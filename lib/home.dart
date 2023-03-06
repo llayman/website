@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webpage/student_opps.dart';
+import 'package:webpage/widgets.dart';
 
 import 'teaching_summary.dart';
 
@@ -50,18 +51,11 @@ class Header extends StatelessWidget {
                   text: TextSpan(
                 children: [
                   const TextSpan(text: 'I am an Assistant Professor in the '),
-                  TextSpan(
-                      text: 'Department of Computer Science',
-                      style: const TextStyle(color: Colors.blue),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap =
-                            () => launchUrlString('https://uncw.edu/csc/')),
+                  Link('https://uncw.edu/csc/',
+                      text: "Department of Computer Science"),
                   const TextSpan(text: " at the "),
-                  TextSpan(
-                      text: 'University of North Carolina Wilmington',
-                      style: const TextStyle(color: Colors.blue),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () => launchUrlString('https://uncw.edu/')),
+                  Link('https://uncw.edu/',
+                      text: "University of North Carolina Wilmington"),
                   const TextSpan(
                       text:
                           ". I research human factors in software engineering and computer security with forays into machine learning and analytics.")
@@ -70,7 +64,7 @@ class Header extends StatelessWidget {
             ],
           ),
         ),
-        Image.asset('images/laymanl.jpg'),
+        Image.asset('assets/images/laymanl.jpg'),
       ],
     );
   }
